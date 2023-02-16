@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>index</title>
+</head>
+<body>
+
+<table border="1">
+  <caption>主机列表</caption>
+  <tr>
+    <th>IP</th>
+    <th>port</th>
+    <th>username</th>
+    <th>add_date</th>
+    <th>delete</th>
+    <th>ssh</th>
+  </tr>
+  {% for i in data %}
+    <tr>
+    <td>{{ i.ip }}</td>
+    <td>{{ i.port }}</td>
+    <td>{{ i.username }}</td>
+    <td>{{ i.add_date }}</td>
+    <td><a href="delete?id={{ i.id }}">delete</a></td>
+    <td><a href="ssh?id={{ i.id }}">ssh</a></td>
+   </tr>
+  {% endfor %}
+</table>
+
+<br><a href="/add">add</a><br>
+</body>
+</html>
+
